@@ -39,13 +39,6 @@ class FirstFragment @JvmOverloads constructor(byUser: Boolean = false) : Fragmen
         Log.d(LIFECYCLE_TAG, "FirstFragment: onCreate(${savedInstanceState.str()})")
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        Log.d(LIFECYCLE_TAG, "FirstFragment: onActivityCreated(${savedInstanceState.str()})")
-        viewModel = ViewModelProvider(this).get(FirstFragmentViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -66,6 +59,13 @@ class FirstFragment @JvmOverloads constructor(byUser: Boolean = false) : Fragmen
 //                add(R.id.fragmentContainerView, SecondFragment(byUser = true), "secondFragment")
             }
         }
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        Log.d(LIFECYCLE_TAG, "FirstFragment: onActivityCreated(${savedInstanceState.str()})")
+        viewModel = ViewModelProvider(this).get(FirstFragmentViewModel::class.java)
+        // TODO: Use the ViewModel
     }
 
     override fun onStart() {

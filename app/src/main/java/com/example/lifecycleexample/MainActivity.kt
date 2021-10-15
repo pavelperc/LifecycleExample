@@ -13,14 +13,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         Log.d(LIFECYCLE_TAG, "MainActivity: onCreate(${savedInstanceState.str()})")
+        super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         if (savedInstanceState == null) {
             supportFragmentManager.commit {
                 setReorderingAllowed(true)
-                add(R.id.fragmentContainerView, FirstFragment(byUser = true), "firstFragment")
+                val firstFragment = FirstFragment(byUser = true)
+                add(R.id.fragmentContainerView, firstFragment, "firstFragment")
+                setPrimaryNavigationFragment(firstFragment)
             }
         }
         binding.buttonFindFragments.setOnClickListener {
@@ -76,14 +78,14 @@ class MainActivity : AppCompatActivity() {
         Log.d(LIFECYCLE_TAG, "MainActivity: onDestroy()")
     }
 
-    override fun onBackPressed() {
-        val entryCount = supportFragmentManager.backStackEntryCount
-        Log.d(LIFECYCLE_TAG, "MainActivity: onBackPressed(), backStackEntryCount=$entryCount")
-        if (entryCount > 0) {
-            supportFragmentManager.popBackStack()
-        } else {
-            Toast.makeText(this, "Back stack is empty", Toast.LENGTH_SHORT).show()
-            super.onBackPressed()
-        }
-    }
+//    override fun onBackPressed() {
+//        val entryCount = supportFragmentManager.backStackEntryCount
+//        Log.d(LIFECYCLE_TAG, "MainActivity: onBackPressed(), backStackEntryCount=$entryCount")
+//        if (entryCount > 0) {
+//            supportFragmentManager.popBackStack()
+//        } else {
+//            Toast.makeText(this, "Back stack is empty", Toast.LENGTH_SHORT).show()
+//            super.onBackPressed()
+//        }
+//    }
 }

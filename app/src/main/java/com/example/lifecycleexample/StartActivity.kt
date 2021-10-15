@@ -18,7 +18,6 @@ class StartActivity : AppCompatActivity() {
         binding.buttonGoToFragmentActivity.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
-        
     }
 
     override fun onStart() {
