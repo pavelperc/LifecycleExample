@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E8F5E9"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <Button
+        android:layout_marginTop="24dp"
+        android:id="@+id/buttonFindFragments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find fragments by tag" />
+
+    <Button
+        android:layout_marginBottom="24dp"
+        android:id="@+id/buttonShowDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Dialog" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white" />
+</LinearLayout>
