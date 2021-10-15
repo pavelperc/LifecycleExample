@@ -46,6 +46,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 .show()
         }
+        binding.buttonFinishActivity.setOnClickListener {
+            finish()
+        }
     }
 
     override fun onStart() {
@@ -80,6 +83,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.popBackStack()
         } else {
             Toast.makeText(this, "Back stack is empty", Toast.LENGTH_SHORT).show()
+            super.onBackPressed()
         }
     }
 }

@@ -16,11 +16,16 @@
         android:text="Find fragments by tag" />
 
     <Button
-        android:layout_marginBottom="24dp"
         android:id="@+id/buttonShowDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Show Dialog" />
+    <Button
+        android:layout_marginBottom="24dp"
+        android:id="@+id/buttonFinishActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to start activity" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
